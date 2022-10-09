@@ -6,7 +6,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 #region MyCode
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/",  (int id) => { return (id*2).ToString(); });
 
 #endregion
 
