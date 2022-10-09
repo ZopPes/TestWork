@@ -1,3 +1,6 @@
+using TestWork;
+using TestWork.Model;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -6,7 +9,8 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 #region MyCode
-app.MapGet("/",  (int id) => { return (id*2).ToString(); });
+
+app.AddFigure<Circle>();
 
 #endregion
 
