@@ -2,6 +2,9 @@
 
 namespace TestWork.Model
 {
+    /// <summary>
+    /// класс описывающий круг
+    /// </summary>
     public class Circle : IFigure
     {
         public double Radius { get; set; }
@@ -13,6 +16,12 @@ namespace TestWork.Model
         }
     }
 
+    /// <summary>
+    /// класс описывающий треугольник
+    /// </summary>
+    /// <param name="A"></param>
+    /// <param name="B"></param>
+    /// <param name="C"></param>
     public record Triangle(double A, double B, double C) : IFigure
     {
         public Result<string> Area()
@@ -44,11 +53,19 @@ namespace TestWork.Model
         object IFigureResult.Value { get => value; set => this.value =(T) value; }
     }
 
+    /// <summary>
+    /// класс для описания финуры которая возвращяет площадь
+    /// </summary>
     public interface IFigure
     {
+        /// <summary>
+        /// площадь фигуры
+        /// </summary>
+        /// <returns></returns>
         IFigureResult Area();
     }
 
+    
     public interface IFigureResult
     {
         Exception? Exception { get; set; }
@@ -56,6 +73,7 @@ namespace TestWork.Model
         object Value { get; set; }
     }
 
+    
     public interface IFigureResult<T> : IFigureResult
     {
         T Value { get; set; }

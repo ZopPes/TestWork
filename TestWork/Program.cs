@@ -10,8 +10,9 @@ var app = builder.Build();
 
 #region MyCode
 
-app.AddFigure<Circle>();
-app.AddFigure<Triangle>();
+app
+    .AddFigure<Circle>()
+    .AddFigure<Triangle>();
 
 #endregion
 
