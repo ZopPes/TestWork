@@ -8,7 +8,7 @@ namespace TestWork
         public static WebApplication AddFigure<FigureType>(this WebApplication application) where FigureType : IFigure 
         {
             var name = typeof(FigureType).Name;
-            application.MapGet($"/{name}",(FigureType f)=>f.Area());
+            application.MapPut($"/{name}",(FigureType f)=>f.Area());
             return application;
         }
     }

@@ -11,6 +11,7 @@ var app = builder.Build();
 #region MyCode
 
 app.AddFigure<Circle>();
+app.AddFigure<Triangle>();
 
 #endregion
 
